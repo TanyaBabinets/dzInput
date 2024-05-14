@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body {
+        background-color: beige;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        color: rgb(51, 49, 49);
+
+        .quiz {
+            width: 700px;
+            border: 5px solid grey;
+            border-radius: 10px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            color: rgb(32, 29, 29);
+        }
+
+        .blocks {
+            width: 655px;
+            margin-top: 15px;
+            margin-bottom: 15px;
+            border: solid 5px grey;
+            border-radius: 10px;
+            background-color: rgb(189, 172, 172);
+            color: darkslategrey;
+        }
+
+        .blocks h2 {
+            padding: 15px;
+            cursor: pointer;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        }
+
+        .blocks .open {
+            display: none;
+            margin-left: 10px;
+            width: 635px;
+            background-color: rgb(189, 172, 172);
+            color: beige;
+            font-size: 22px;
+        }
+    }
+</style>
+
+<body>
+    <h1>Викторина для вас</h1>
+    <div class="quiz">
+        <div class="blocks">
+            <h2>Назовите, пожалуйста, самый знаменитый в мире стадион для игры в футбол</h2>
+            <div class="open">
+                <p>Уэмбли — стадион только для игр, тренировки на нем запрещены</p>
+            </div>
+        </div>
+        <div class="blocks">
+            <h2>Всего их 52 или 4 по 13. Иногда к ним добавляют еще 2,
+                иногда отнимают 16, а то и 20. О чем идет речь?</h2>
+            <div class="open">
+                <p>Игральные карты 52 листа (4 масти по 13 карт) и 2 джокера.</p>
+            </div>
+        </div>
+        <div class="blocks">
+            <h2>Сколько костей в теле акулы?</h2>
+            <div class="open">
+                <p>Ноль! У нее только хрящи</p>
+            </div>
+        </div>
+        <div class="blocks">
+            <h2>Сколько сердец у осьминога?</h2>
+            <div class="open">
+                <p>Три</p>
+            </div>
+        </div>
+        <div class="blocks">
+            <h2>Одна из весьма высококвалифицированных и высокооплачиваемых
+                категорий научных работников носит в Америке странное
+                жаргонное название "профессиональные идиоты". Чем же
+                занимаются эти люди на своей работе?</h2>
+            <div class="open">
+                <p> Тестировщики. Проверяя программы, они должны предусмотреть все самые идиотские ошибки,
+                    которые может сделать пользователь, и выявить
+                    реакцию программ на них</p>
+            </div>
+        </div>
+    </div>
+    <script>
+
+        const questions = document.querySelectorAll(".blocks");
+        questions.forEach(b => {
+            const header = b.querySelector("h2");
+            const text = b.querySelector(".open");
+
+            header.addEventListener('click', () => {
+                text.style.display = text.style.display === 'block' ? 'none' : 'block';
+            });
+
+        });
+
+    </script>
+</body>
+
+</html>
